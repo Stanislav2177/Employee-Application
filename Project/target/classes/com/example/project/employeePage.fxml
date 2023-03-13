@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="654.0" prefWidth="902.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.EmployeeController">
+   <children>
+      <Text layoutX="14.0" layoutY="505.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Show employees:" />
+      <Button fx:id="readButton" layoutX="111.0" layoutY="488.0" mnemonicParsing="false" onAction="#readDataFromDB" text="READ" />
+      <Text layoutX="14.0" layoutY="535.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Display top 5:" />
+      <TableView fx:id="tableView" prefHeight="479.0" prefWidth="902.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="33.60000687837601" text="ID" />
+          <TableColumn fx:id="fullName" prefWidth="149.60002899169922" text="FULL NAME" />
+            <TableColumn fx:id="email" prefWidth="110.39996337890625" text="EMAIL" />
+            <TableColumn fx:id="phoneNumber" prefWidth="110.4000244140625" text="PHONE NUMBER" />
+            <TableColumn fx:id="dateOfBirth" prefWidth="124.00003051757812" text="DATE OF BIRTH" />
+            <TableColumn fx:id="dateOfAdding" prefWidth="109.5999755859375" text="DATE OF ADDING" />
+            <TableColumn fx:id="salary" prefWidth="94.39996337890625" text="SALARY" />
+            <TableColumn fx:id="completedTasks" prefWidth="85.60003662109375" text="COM. TASKS" />
+            <TableColumn fx:id="department" prefWidth="79.199951171875" text="DEPARTMENT" />
+        </columns>
+      </TableView>
+      <Button fx:id="displayTop" layoutX="92.0" layoutY="518.0" mnemonicParsing="false" onAction="#displayTopEmployees" text="TOP5" />
+      <Text layoutX="14.0" layoutY="565.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete employee:" />
+      <Button fx:id="deleteButton" layoutX="165.0" layoutY="548.0" mnemonicParsing="false" onAction="#deleteEmployee" text="DEL" />
+      <TextField fx:id="textFieldDeleteId" layoutX="115.0" layoutY="547.0" prefHeight="26.0" prefWidth="37.0" promptText="id" />
+      <TextField fx:id="textFieldCreateId" layoutX="228.0" layoutY="501.0" prefHeight="26.0" prefWidth="38.0" promptText="id" />
+      <Text layoutX="270.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To add employee into database, insert information in the following textfields." />
+      <Line endX="-40.20001220703125" endY="-111.79998779296875" layoutX="258.0" layoutY="592.0" startX="-40.20001220703125" startY="63.0" />
+      <TextField fx:id="textFieldCreateName" layoutX="270.0" layoutY="501.0" prefHeight="26.0" prefWidth="185.0" promptText="full name" />
+      <TextField fx:id="textFieldCreateEmail" layoutX="463.0" layoutY="501.0" promptText="email" />
+      <TextField fx:id="textFieldCreateDOB" layoutX="631.0" layoutY="501.0" promptText="date of birth" />
+      <TextField fx:id="textFieldCreateDOA" layoutX="228.0" layoutY="539.0" promptText="date of adding yyyy-mm-dd" />
+      <TextField fx:id="textFieldCreateSalary" layoutX="399.0" layoutY="539.0" promptText="salary" />
+      <TextField fx:id="textFieldCreateDId" layoutX="736.0" layoutY="537.0" prefHeight="26.0" prefWidth="55.0" promptText="dep. id" />
+      <Button fx:id="createButton" layoutX="819.0" layoutY="517.0" mnemonicParsing="false" onAction="#createEmployee" text="CREATE" />
+      <TextField fx:id="textFieldCreatePhNumber" layoutX="557.0" layoutY="538.0" promptText="phone number - 10 digits" />
+      <Text layoutX="14.0" layoutY="599.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update:" />
+      <TextField fx:id="textFieldUpdateId" layoutX="60.0" layoutY="582.0" prefHeight="26.0" prefWidth="38.0" promptText="id" />
+      <ChoiceBox fx:id="choiceBox" layoutX="105.0" layoutY="582.0" prefHeight="26.0" prefWidth="102.0" />
+      <Button fx:id="updateButton" layoutX="147.0" layoutY="616.0" mnemonicParsing="false" onAction="#updateRow" text="UPDATE" />
+      <TextField fx:id="textFieldUpdateNewValue" layoutX="5.0" layoutY="616.0" prefHeight="26.0" prefWidth="120.0" promptText="new value" />
+   </children>
+</AnchorPane>

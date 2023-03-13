@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="710.0" prefWidth="934.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.TaskController">
+   <children>
+      <TableView fx:id="tableView" prefHeight="414.0" prefWidth="934.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="title" prefWidth="75.0" text="TITLE" />
+            <TableColumn fx:id="description" prefWidth="528.0" text="DESCRIPTION" />
+            <TableColumn fx:id="givenAt" prefWidth="83.20001220703125" text="GIVEN AT" />
+            <TableColumn fx:id="dueDate" prefWidth="80.800048828125" text="DUE DATE" />
+            <TableColumn fx:id="finishedAt" prefWidth="89.60001220703123" text="FINISHED AT" />
+        </columns>
+      </TableView>
+      <Button fx:id="read" layoutX="102.0" layoutY="418.0" mnemonicParsing="false" onAction="#readDataFromDB" text="READ" />
+      <Text layoutX="14.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Show all tasks:" />
+      <Text layoutX="14.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tasks in ascending order:" />
+      <Text layoutX="14.0" layoutY="501.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tasks in descending order:" />
+      <Button fx:id="ascOrder" layoutX="154.0" layoutY="451.0" mnemonicParsing="false" onAction="#ascOrder" prefHeight="26.0" prefWidth="45.0" text="ASC" />
+      <Button fx:id="descOrder" layoutX="163.0" layoutY="483.0" mnemonicParsing="false" onAction="#descOrder" text="DESC" />
+      <Text layoutX="14.0" layoutY="530.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expired tasks:" />
+      <Button fx:id="expiredTasks" layoutX="90.0" layoutY="513.0" mnemonicParsing="false" onAction="#expiredTasks" text="CHECK" />
+      <TextField fx:id="textFieldForId" layoutX="308.0" layoutY="451.0" prefHeight="26.0" prefWidth="40.0" promptText="id" />
+      <Line endX="-48.0" endY="193.0" layoutX="336.0" layoutY="517.0" startX="-48.0" startY="-102.60000610351562" />
+      <Text layoutX="308.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For creating a new task, insert data in the following text fields" wrappingWidth="380.28131103515625">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="textFieldForTitle" layoutX="375.0" layoutY="452.0" promptText="title" />
+      <TextArea fx:id="textFieldForDescription" layoutX="298.0" layoutY="488.0" prefHeight="200.0" prefWidth="446.0" promptText="Description" />
+      <TextField fx:id="textFieldDueDate" layoutX="549.0" layoutY="452.0" promptText="due date" />
+      <Text layoutX="824.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*by default the 'given at' column is set to current date time" wrappingWidth="95.5179443359375" />
+      <Button fx:id="addTaskButton" layoutX="798.0" layoutY="569.0" mnemonicParsing="false" onAction="#addTask" prefHeight="54.0" prefWidth="119.0" text="ADD">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Text layoutX="14.0" layoutY="567.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete one row" />
+      <TextField fx:id="textFieldDeleteId" layoutX="99.0" layoutY="550.0" prefHeight="26.0" prefWidth="38.0" promptText="id" />
+      <Button fx:id="deleteOneRowButton" layoutX="231.0" layoutY="550.0" mnemonicParsing="false" onAction="#deleteOneRow" prefHeight="26.0" prefWidth="46.0" text="DEL" />
+      <Text layoutX="14.0" layoutY="601.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete all rows:" />
+      <Button fx:id="deleteAllRowsButton" layoutX="112.0" layoutY="584.0" mnemonicParsing="false" onAction="#deleteAllRows" prefHeight="26.0" prefWidth="46.0" text="DEL" />
+      <TextField fx:id="textFieldDeleteOneRowTitle" layoutX="144.0" layoutY="550.0" prefHeight="26.0" prefWidth="81.0" promptText="title" />
+      <Text layoutX="14.0" layoutY="636.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update:" />
+      <Button fx:id="updateButton" layoutX="208.0" layoutY="663.0" mnemonicParsing="false" onAction="#updateRow" text="UPDATE" />
+      <TextField fx:id="textFieldUpdateId" layoutX="63.0" layoutY="619.0" prefHeight="26.0" prefWidth="38.0" promptText="id" />
+      <TextField fx:id="textFieldUpdateNewValue" layoutX="20.0" layoutY="663.0" promptText="new value" />
+      <ChoiceBox fx:id="choiceBox" layoutX="124.0" layoutY="618.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
